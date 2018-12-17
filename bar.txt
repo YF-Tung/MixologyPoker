@@ -1,0 +1,18 @@
+# List the ingredients currently you have, seperated by new line
+# Lead comment with a # sign
+
+########## Spirit
+Gin
+Vodka
+Rum
+Tequila
+Scotch
+########## Liqueur
+Cointreau
+########## Fruit / Juice
+Lemon
+########## Soft drinks
+Coke
+########## Other ingredient
+Syrup
+##########
