@@ -30,6 +30,7 @@ def main():
     print ('You can make {} cocktail(s) currently.'.format(len(lack_list.get(0, []))))
 
     # Recipes that you can make by buying one
+    print('==============================================================================')
     if 1 in lack_list:
         count = {}
         for x in lack_list[1]:
@@ -43,6 +44,19 @@ def main():
                 tpl[1], tpl[0]))
     else:
         print ('You cannot make more cocktails by just buying another ingredient.')
+
+    print('==============================================================================')
+    count = {}
+    total_lack = [ingr for _,group in lack_list.items() for recipe in group for ingr in recipe]
+    for ingr in total_lack:
+        count[ingr] = 1 + count.get(ingr, 0)
+    print_cnt = 0
+    sorted_count = sorted(count.items(), key=operator.itemgetter(1))
+    for tpl in reversed(sorted_count):
+        print ('{} cocktails requires {}'.format(tpl[1], tpl[0]))
+        print_cnt += 1
+        if print_cnt == 10:
+            break
 
 if __name__ == '__main__':
     main()
